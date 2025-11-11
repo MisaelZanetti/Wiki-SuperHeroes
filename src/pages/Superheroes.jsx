@@ -1,26 +1,46 @@
-import { useState, createContext, useEffect } from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 import Cards from "./Cards";
-
 
 export default function Superheroes() {
     const [heroes, setHeroes] = useState([]);
-    const API_KEY = 'fc1ca0de91fdb4a7034e007fd91e99c9'
+    const [heroesShow, setHeroesShow] = useState([]);
+    const [page, setPage] = useState(0);
+
     useEffect(() => {
-        fetch()
-    }, [])
+        fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
+            .then(response => response.json())
+            .then(data => setHeroes(data));
+    }, []);
+
+    useEffect(() => {
+        const start = page * 21;
+        const end = start + 21;
+        setHeroesShow(heroes.slice(start, end));
+    }, [heroes, page]);
+
+    const nextPage = () => {
+        if ((page + 1) * 21 < heroes.length) {
+            setPage(page + 1);
+        }
+    };
+
+    const prevPage = () => {
+        if (page > 0) {
+            setPage(page - 1);
+        }
+    };
 
     return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold mb-4">Superhéroes</h1>
+        <div>
+            <h1>Superhéroes</h1>
 
-            <Outlet context={hola} />
+            <Outlet context={heroesShow} />
 
-            <nav className="flex gap-4 mb-4">
-                <Link to="page/1">1</Link>
-                <Link to="page/2">2</Link>
-                <Link to="page/3">3</Link>
-            </nav>
+            <div>
+                <button onClick={prevPage} >←</button>
+                <button onClick={nextPage} >→</button>
+            </div>
         </div>
     );
 }

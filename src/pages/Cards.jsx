@@ -1,11 +1,19 @@
 import React from 'react'
 import { useOutletContext } from 'react-router-dom'
 
-export default function Cards() {
-  const hola = useOutletContext();
+export default function Cards({}) {
+  const heroesShow = useOutletContext();
+
+  console.log(heroesShow)
+
   return (
     <div>
-      <h1>{hola}</h1>
+      {heroesShow.map(hero => (
+        <div key={hero.id}>
+          <img src={hero.images.sm} alt={hero.name}/>
+          <h2>{hero.name}</h2>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
