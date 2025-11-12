@@ -32,14 +32,16 @@ export default function Superheroes() {
     };
 
     return (
-        <div>
-            <h1>Superhéroes</h1>
+        <div className="superheroes-page">
+            <h1 className="title">Superhéroes</h1>
 
-            <Outlet context={heroesShow} />
+            <div className="cards-container">
+                <Outlet context={heroesShow} />
+            </div>
 
-            <div>
-                <button onClick={prevPage} >←</button>
-                <button onClick={nextPage} >→</button>
+            <div className="pagination">
+                <button onClick={prevPage}>←</button>
+                <button onClick={nextPage}>→</button>
             </div>
         </div>
     );
