@@ -1,6 +1,7 @@
 import React from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import "./Card.css";
+import Footer from "./Footer";
 
 export default function Cards() {
   const heroesShow = useOutletContext();
@@ -20,18 +21,10 @@ export default function Cards() {
           <div className="hero-info">
             <h2 className="hero-name">{hero.name}</h2>
             <p className="hero-race">{hero.appearance.race || "Unknown race"}</p>
-            <div className="hero-power">
-              <div className="power-bar">
-                <div
-                  className="power-bar-fill"
-                  style={{ width: `${hero.powerstats.power}%` }}
-                ></div>
-              </div>
-              <span>{hero.powerstats.power}% Power</span>
-            </div>
           </div>
         </div>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   );
 }
