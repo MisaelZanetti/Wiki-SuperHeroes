@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './SuperHeroeIndividual.css'
+import BotonFav from "./BotonFav";
 
 export default function SuperHeroeIndividual() {
   const { id } = useParams();
@@ -21,11 +22,14 @@ export default function SuperHeroeIndividual() {
       <div className="hero-header">
         <img src={images.lg} alt={name} className="hero-image" />
         <div className="hero-info">
-          <h1>{name}</h1>
-          <h3>{biography.fullName}</h3>
-          <p><strong>Primera presentación:</strong> {biography.firstAppearance}</p>
-          <p><strong>Lugar de nacimiento:</strong> {biography.placeOfBirth}</p>
-          <p><strong>Ocupación:</strong> {work.occupation}</p>
+          <div>
+            <h1>{name}</h1>
+            <h3>{biography.fullName}</h3>
+            <p><strong>Primera presentación:</strong> {biography.firstAppearance}</p>
+            <p><strong>Lugar de nacimiento:</strong> {biography.placeOfBirth}</p>
+            <p><strong>Ocupación:</strong> {work.occupation}</p>
+            <BotonFav id={id} />
+          </div>
         </div>
       </div>
 

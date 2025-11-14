@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Busqueda() {
     const [valor, setValor] = useState("");
     const [heroes, setHeroes] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
@@ -27,7 +29,7 @@ export default function Busqueda() {
             </div>
 
             <div className="cards-container">
-                {heroes.filter(hero => hero.name == valor).map((hero) => (
+                {heroes.filter(hero => hero.name.toLowerCase().includes(valor.toLowerCase())).map((hero) => (
                     <div
                         key={hero.id}
                         className="hero-card"

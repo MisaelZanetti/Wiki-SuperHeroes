@@ -31,18 +31,11 @@ export default function Footer() {
                         flexWrap: "wrap",
                     }}
                 >
-                    <Link to={'/'}>
-                        Inicio
-                    </Link>
-                    <Link to={"/superheroes/all"}>
-                        Héroes
-                    </Link>
-                    <Link to={'/figths'}>
-                        Pelea
-                    </Link>
-                    <Link to={'/busqueda'}>
-                        Buscar
-                    </Link>
+                    <Link className="link" to={'/'}>Inicio</Link>
+                    <Link className="link" to={"/superheroes/all"}>Héroes</Link>
+                    <Link className="link" to={'/superheroes/busqueda'}>Buscar</Link>
+                    <Link className="link" to={'/superheroes/favoritos'}>Favoritos</Link>
+                    <Link className="link" to={'/figths'}>Pelea</Link>
                 </div>
             </div>
         </footer>

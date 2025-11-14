@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Cards from "./Cards";
 import Footer from "./Footer";
+import { UserContext } from "./Inicio";
 
 export default function Superheroes() {
     const [heroes, setHeroes] = useState([]);
     const [heroesShow, setHeroesShow] = useState([]);
     const [page, setPage] = useState(0);
+    const [prefUser, setPrefUser] = useContext(UserContext)
 
     useEffect(() => {
         fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
@@ -15,13 +17,13 @@ export default function Superheroes() {
     }, []);
 
     useEffect(() => {
-        const start = page * 21;
-        const end = start + 21;
+        const start = page * 20;
+        const end = start + 20;
         setHeroesShow(heroes.slice(start, end));
     }, [heroes, page]);
 
     const nextPage = () => {
-        if ((page + 1) * 21 < heroes.length) {
+        if ((page + 1) * 20 < heroes.length) {
             setPage(page + 1);
         }
     };
@@ -38,10 +40,11 @@ export default function Superheroes() {
                 <div className="header">
                     <h1 className="title">Superhéroes</h1>
                     <div className="links">
-                        <Link to={'/'}>Inicio</Link>
-                        <Link to={"/superheroes/all"}>Héroes</Link>
-                        <Link to={'/superheroes/busqueda'}>Buscar</Link>
-                        <Link to={'/figths'}>Pelea</Link>
+                        <Link className="link" to={'/'}>Inicio</Link>
+                        <Link className="link" to={"/superheroes/all"}>Héroes</Link>
+                        <Link className="link" to={'/superheroes/busqueda'}>Buscar</Link>
+                        <Link className="link" to={'/superheroes/favoritos'}>Favoritos</Link>
+                        <Link className="link" to={'/figths'}>Pelea</Link>
                     </div>
                 </div>
 
@@ -54,8 +57,6 @@ export default function Superheroes() {
                     <button onClick={nextPage}>→</button>
                 </div>
             </div>
-
-            <Footer />
         </>
     );
 }
