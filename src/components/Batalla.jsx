@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from "./Inicio";
+import { UserContext } from "./Principal";
 
 export default function Battle() {
     const [prefUser] = useContext(UserContext);

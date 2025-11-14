@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "./Inicio";
+import { UserContext } from "./Principal";
 import { useNavigate } from "react-router-dom";
 
 export default function Favoritos() {

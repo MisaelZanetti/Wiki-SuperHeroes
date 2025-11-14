@@ -31,7 +31,7 @@ export default function Footer() {
                         flexWrap: "wrap",
                     }}
                 >
-                    <Link className="link" to={'/'}>Inicio</Link>
+                    <Link className="link" to={'/inicio'}>Inicio</Link>
                     <Link className="link" to={"/superheroes/all"}>Héroes</Link>
                     <Link className="link" to={'/superheroes/busqueda'}>Buscar</Link>
                     <Link className="link" to={'/superheroes/favoritos'}>Favoritos</Link>

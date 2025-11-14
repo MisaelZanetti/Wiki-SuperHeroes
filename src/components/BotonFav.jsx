@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserContext } from "./Inicio";
+import { UserContext } from "./Principal";
 
 export default function BotonFav({ id }) {
     const [prefUser, setPrefUser] = useContext(UserContext)

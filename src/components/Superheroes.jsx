@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Cards from "./Cards";
 import Footer from "./Footer";
-import { UserContext } from "./Inicio";
+import { UserContext } from "./Principal";
 
 export default function Superheroes() {
     const [heroes, setHeroes] = useState([]);
@@ -40,7 +40,7 @@ export default function Superheroes() {
                 <div className="header">
                     <h1 className="title">Superhéroes</h1>
                     <div className="links">
-                        <Link className="link" to={'/'}>Inicio</Link>
+                        <Link className="link" to={'/inicio'}>Inicio</Link>
                         <Link className="link" to={"/superheroes/all"}>Héroes</Link>
                         <Link className="link" to={'/superheroes/busqueda'}>Buscar</Link>
                         <Link className="link" to={'/superheroes/favoritos'}>Favoritos</Link>
