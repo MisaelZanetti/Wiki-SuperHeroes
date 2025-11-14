@@ -44,7 +44,7 @@ export default function Superheroes() {
                         <Link className="link" to={"/superheroes/all"}>Héroes</Link>
                         <Link className="link" to={'/superheroes/busqueda'}>Buscar</Link>
                         <Link className="link" to={'/superheroes/favoritos'}>Favoritos</Link>
-                        <Link className="link" to={'/figths'}>Pelea</Link>
+                        <Link className="link" to={'/superheroes/batalla'}>Batalla</Link>
                     </div>
                 </div>
 

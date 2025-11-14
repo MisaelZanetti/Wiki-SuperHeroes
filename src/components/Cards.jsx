@@ -1,6 +1,5 @@
 import React from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
-import "./Card.css";
 import Footer from "./Footer";
 import BotonFav from "./BotonFav";
 

@@ -134,3 +134,340 @@ body {
 .link{
     color:crimson;
 }
+
+/* CONTENEDOR GENERAL */
+.battle-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+/* CADA LADO (IZQ / DER) */
+.battle-side {
+    flex: 1;
+    min-width: 280px;
+    background: #0f162a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #1c2340;
+}
+
+.side-title {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #ff4757;
+}
+
+/* SELECT */
+.hero-select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #1a2238;
+    color: #fff;
+    border: 1px solid #39425b;
+    margin-bottom: 1.5rem;
+}
+
+/* FOTO DEL HÉROE */
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-photo img {
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #2e3a59;
+}
+
+/* STATS */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+/* CADA FILA DE STAT */
+.stat-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 50px;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #c3c9df;
+}
+
+/* BARRA DE PODER */
+.stat-bar {
+    width: 100%;
+    height: 12px;
+    background: #243049;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: #ff4757;
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.stat-value {
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* BOTÓN DE PELEA */
+.fight-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.fight-btn {
+    background: #ff4757;
+    color: white;
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fight-btn:hover {
+    background: #ff3143;
+}
+
+.fight-btn:disabled {
+    background: #777;
+    cursor: not-allowed;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    background: linear-gradient(135deg, #0a0a1f, #1c1c3c);
+    min-height: 100vh;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    backdrop-filter: blur(10px);
+    max-width: 260px;
+    max-height: 367px;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-img-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.hero-card:hover .hero-img {
+    transform: scale(1.1);
+}
+
+.hero-info {
+    padding: 15px;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #4ae1ff;
+}
+
+.hero-race {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.hero-power {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.power-bar {
+    width: 80%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.power-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ae1ff, #00ffa5);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.btnFav {
+    height: 50px;
+    width: 50px;
+    background-color:#1c1c3c00;
+    border: none;
+    /* border-color: #00ffa5; */
+    border-radius: 10px;
+    font-size:xx-large;
+    color: #4ae1ff;
+}
+
+.hero-container {
+    padding: 40px;
+    color: #fff;
+    background: radial-gradient(circle at top, #0b0b2d, #06061a 80%);
+    min-height: 100vh;
+}
+
+/* ==== CABECERA ==== */
+.hero-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(80, 150, 255, 0.4);
+}
+
+.hero-info {
+    max-width: 500px;
+}
+
+.hero-info h1 {
+    font-size: 2.5rem;
+}
+
+.hero-info h3 {
+    margin-top: 5px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+/* ==== POWERSTATS ==== */
+.powerstats {
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.powerstats h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+    gap: 10px;
+}
+
+.stat span {
+    width: 80px;
+    text-transform: capitalize;
+}
+
+.bar {
+    flex-grow: 1;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3a9dff, #c643f7);
+    border-radius: 8px 0 0 8px;
+    transition: width 0.5s ease-out;
+}
+
+.value {
+    width: 30px;
+    text-align: right;
+}
+
+/* ==== DETALLES ==== */
+.details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(100, 100, 255, 0.15);
+}
+
+.section h2 {
+    color: #3a9dff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+/* ==== LOADING ==== */
+.loading {
+    text-align: center;
+    color: #ccc;
+    margin-top: 100px;
+    font-size: 1.5rem;
+}

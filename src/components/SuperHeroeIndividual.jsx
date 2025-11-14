@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import './SuperHeroeIndividual.css'
 import BotonFav from "./BotonFav";
 
 export default function SuperHeroeIndividual() {

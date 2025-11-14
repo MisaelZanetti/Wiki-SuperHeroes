@@ -8,6 +8,7 @@ import Cards from './components/Cards.jsx'
 import SuperHeroeIndividual from './components/SuperHeroeIndividual.jsx'
 import Busqueda from './components/Busqueda.jsx'
 import Favoritos from './components/Favoritos.jsx'
+import Batalla from './components/Batalla.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
             <Route path=':id' element={<SuperHeroeIndividual />}></Route>
             <Route path='busqueda' element={<Busqueda />} ></Route>
             <Route path='favoritos' element={<Favoritos />} ></Route>
+            <Route path='batalla' element={<Batalla />}></Route>
           </Route>
         </Route>
       </Routes>
