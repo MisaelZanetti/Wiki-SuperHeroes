@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react'
-import "./Inicio.css"
 
 function App() {
 
