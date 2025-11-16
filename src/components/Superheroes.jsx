@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import { UserContext } from "./Principal";
+import "../css/Superheroes.css";
+
 
 export default function Superheroes() {
     const [heroes, setHeroes] = useState([]);

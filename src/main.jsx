@@ -1,7 +1,7 @@
 import { createContext, StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './components/Index.css'
+import './css/Index.css'
 import Superheroes from './components/Superheroes.jsx'
 import Cards from './components/Cards.jsx'
 import SuperHeroeIndividual from './components/SuperHeroeIndividual.jsx'

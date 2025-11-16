@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "./Principal";
 import { useNavigate } from "react-router-dom";
+import "../css/Favoritos.css";
 
 export default function Favoritos() {
     const [prefUser] = useContext(UserContext);

@@ -1,0 +1,17 @@
+/* Favoritos.css - lista de favoritos (reutiliza cards) */
+.cards-container{ padding: 28px; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:22px; }
+.hero-card{ border-radius: 14px; overflow:hidden; position:relative; }
+.hero-card .fav-tag{
+  position:absolute; top:10px; right:10px;
+  background: linear-gradient(90deg, #ff4d8b, #00d4a6);
+  color:#fff; padding:6px 8px; border-radius:999px; font-weight:700; font-size:0.9rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* empty state */
+.favorites-empty{
+  display:flex; align-items:center; justify-content:center; min-height: 240px; color:var(--muted);
+  border-radius: 12px; border: 1px dashed rgba(255,255,255,0.03); background: rgba(255,255,255,0.01);
+}
+
+/* END Favoritos.css */

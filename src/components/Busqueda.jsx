@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import "../css/Busqueda.css";
+
 
 export default function Busqueda() {
     const [valor, setValor] = useState("");

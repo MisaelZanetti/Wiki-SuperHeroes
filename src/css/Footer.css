@@ -1,0 +1,24 @@
+/* Footer.css - footer oscuro con links rose/teal */
+footer{
+  background: linear-gradient(180deg, rgba(11,11,30,0.7), rgba(4,6,12,0.95));
+  color: var(--muted);
+  padding: 28px 14px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  position: relative;
+  margin-top: 40px;
+}
+footer h2{ color: #ff4d8b; margin-bottom:6px; font-size:1.15rem; }
+footer p{ color: var(--muted); font-size:0.95rem; margin-bottom:8px; }
+footer .link{ color:#ff4d8b; padding:6px 8px; border-radius:8px; font-weight:700; border: 1px solid rgba(255,255,255,0.02); }
+footer .link:hover{ background: rgba(255,77,139,0.03); }
+
+/* small decorative elements */
+footer::before{
+  content:"";
+  position:absolute; left:10px; top:-40px;
+  width:160px; height:160px; filter: blur(48px);
+  background: radial-gradient(circle at 20% 20%, rgba(255,77,139,0.08), transparent 30%), radial-gradient(circle at 80% 80%, rgba(0,212,166,0.04), transparent 40%);
+  z-index:-1;
+}
+
+/* END Footer.css */

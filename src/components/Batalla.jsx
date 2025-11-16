@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "./Principal";
-
+import "../css/Battle.css";
 export default function Battle() {
     const [prefUser] = useContext(UserContext);
     const [heroesFav, setHeroesFav] = useState([]);

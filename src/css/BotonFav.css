@@ -1,0 +1,58 @@
+/* BotonFav.css - botón favorito con animaciones y estados */
+:root{
+  --fav-size: 48px;
+  --fav-bg: rgba(255,255,255,0.02);
+  --fav-border: rgba(255,255,255,0.04);
+  --pink: #ff4d8b;
+  --teal: #00d4a6;
+}
+
+/* contenedor del boton */
+.btnFav {
+  height: var(--fav-size);
+  width: var(--fav-size);
+  display:inline-grid;
+  place-items:center;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  color: var(--pink);
+  font-size: 1.8rem;
+  border: 1px solid var(--fav-border);
+  cursor: pointer;
+  transition: transform 160ms, box-shadow 200ms, color 200ms;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+.btnFav:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 18px 48px rgba(255,77,139,0.08); }
+.btnFav.active { color: #fff; background: linear-gradient(90deg, var(--pink), var(--teal)); box-shadow: 0 22px 52px rgba(255,77,139,0.12); }
+
+/* pequeño pulso cuando se activa */
+@keyframes fav-pop {
+  0% { transform: scale(.85); opacity: 0.6; }
+  50% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.btnFav:active { animation: fav-pop 260ms cubic-bezier(.2,.9,.3,1); }
+
+/* alternativa: ícono con stroke para no-javascript fallback */
+.btnFav svg { width:22px; height:22px; display:block; }
+
+/* helper: visually-hidden label for screen readers */
+.btnFav .sr-label { position:absolute; left:-9999px; }
+
+/* small tooltip with CSS-only */
+.btnFav[data-tooltip]:hover::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(var(--fav-size) + 8px);
+  background: rgba(12,12,24,0.9);
+  color: #fff;
+  padding:8px 10px;
+  border-radius:8px;
+  font-size: 0.82rem;
+  white-space:nowrap;
+  transform: translateY(4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  opacity:1;
+}
+
+/* END BotonFav.css */

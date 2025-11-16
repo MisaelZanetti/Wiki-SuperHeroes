@@ -1,0 +1,100 @@
+/* App.css – estilo para la página principal de WikiHeroes */
+
+/* Layout general */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  animation: fadeInPage 0.6s ease forwards;
+}
+
+/* Títulos principales */
+.app-title {
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--accent-pink);
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+/* Subtítulos de secciones */
+.app-section h2 {
+  font-size: clamp(20px, 3vw, 30px);
+  color: var(--accent-esmerald);
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 6px;
+}
+
+/* Texto general */
+.app-section p {
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+/* Listas */
+.app-section ul {
+  margin-left: 22px;
+  margin-top: 10px;
+}
+
+.app-section li {
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.app-section li strong {
+  color: var(--accent-pink);
+}
+
+/* Cards para las secciones */
+.app-section {
+  background: var(--glass);
+  border: 1px solid var(--card-edge);
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--soft-shadow);
+  backdrop-filter: blur(8px);
+  margin-bottom: 26px;
+  transition: transform 240ms ease, box-shadow 260ms ease;
+}
+
+.app-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+}
+
+/* Animación de entrada */
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Banner principal */
+.app-banner {
+  margin: 16px 0 28px;
+  background: linear-gradient(90deg, #ff4d8b44, #00d4a644);
+  backdrop-filter: blur(6px);
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  animation: fadeIn 0.8s ease;
+}
+
+.app-banner p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e8fdf9;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
