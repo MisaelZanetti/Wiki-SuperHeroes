@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import "./Inicio.css"
+import "./index.css"
 
 function App() {
 
@@ -9,9 +9,9 @@ function App() {
       <section>
         <h2>Acerca de esta Wiki</h2>
         <p>
-          Bienvenido a MiWiki, un proyecto pensado para organizar ideas, información y contenido
-          de distintos temas de manera clara y accesible. Aquí podrás leer artículos, explorar
-          conceptos y conocer proyectos desarrollados por la comunidad.
+          Bienvenido a WikiHeroes, un proyecto pensado para organizar ideas, información y contenido
+          de distintos heroes de manera y accesible. Aquí podrás explorar
+          conceptos y conocer más a tus heroes favoritos.
         </p>
       </section>
 
@@ -19,16 +19,15 @@ function App() {
       <section>
         <h2>¿Qué puedes encontrar aquí?</h2>
         <p>
-          Esta wiki reúne textos simples sobre diferentes áreas de interés, con el objetivo de
-          facilitar la lectura y la comprensión. No hay botones, funciones ni elementos interactivos;
-          sólo contenido directo y organizado.
+          Esta wiki reúne textos simples sobre diferentes superheroes, con el objetivo de
+          facilitar las busqueda de información. También podes ver sus estadisticas ya sea fuerza, inteligencia, velocidad, etc.
         </p>
 
 
         <ul>
-          <li><strong>Información general:</strong> conceptos básicos y explicaciones.</li>
-          <li><strong>Temas creativos:</strong> historias, ideas y proyectos personales.</li>
-          <li><strong>Notas y reflexiones:</strong> textos breves sobre temas variados.</li>
+          <li><strong>Heroés:</strong> Información sobre los heroes.</li>
+          <li><strong>Favoritos:</strong> Los que vos seleccionaste como tus favoritos.</li>
+          <li><strong>Peleas:</strong> Peleas entre dos heroes favoritos.</li>
         </ul>
       </section>
 
@@ -36,8 +35,7 @@ function App() {
       <section>
         <h2>Objetivo del proyecto</h2>
         <p>
-          El propósito de esta wiki es construir un espacio simple donde puedas almacenar tus
-          ideas, aprender sobre nuevos temas o simplemente explorar contenido escrito de forma clara.
+          El propósito de esta wiki es construir un espacio simple donde puedas ver y hacer pelaear a superheroes, aprender sobre nuevos temas o simplemente explorar contenido de forma clara.
         </p>
       </section>
 

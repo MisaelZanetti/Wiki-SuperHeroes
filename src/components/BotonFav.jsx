@@ -1,16 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { UserContext } from "./Principal";
 
 export default function BotonFav({ id }) {
     const [prefUser, setPrefUser] = useContext(UserContext)
+    const [estrella, setEstrella] = useState("☆")
+    const [fav, setFav] = useState(true)
 
     const hcf = () => {
+        setFav(!fav)
         setPrefUser(prev => [...prev, id])
+        fav? setEstrella("★") : setEstrella ("☆");
     }
 
     return (
         <div>
-            <button className='btnFav' onClick={hcf}>☆</button>
+            <button className='btnFav' onClick={hcf}>{estrella}</button>
         </div>
     )
 }
