@@ -172,3 +172,82 @@
     height: 240px;
   }
 }
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 6px 12px;
+    border: 1px solid #555;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.pagination button:hover {
+    background: #444;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.active-page {
+    background: #ff0044 !important;
+    border-color: #ff0044 !important;
+    font-weight: bold;
+}
+.pagination {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* TODOS LOS BOTONES */
+.pagination button {
+    padding: 6px 12px;
+    border: 1px solid #555;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+/* HOVER GENERAL */
+.pagination button:hover:not(:disabled) {
+    background: #444;
+}
+
+/* BOTONES DESACTIVADOS */
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* 👉 NUEVO: FLECHAS DE OTRO COLOR */
+.pagination button.arrow {
+    background: #0057ff;      /* 🔵 Azul */
+    border-color: #0057ff;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination button.arrow:hover:not(:disabled) {
+    background: #0a63ff;
+}
+
+/* Número de página ACTIVO */
+.active-page {
+    background: #ff0044 !important;   /* 🔴 Rojo */
+    border-color: #ff0044 !important;
+    font-weight: bold;
+}

@@ -36,6 +36,20 @@ export default function Superheroes() {
         }
     };
 
+    const getPageNumbers = () => {
+    const totalPages = Math.ceil(heroes.length / 20);
+    const numbers = [];
+
+    for (let i = page - 2; i <= page + 2; i++) {
+        if (i >= 0 && i < totalPages) {
+            numbers.push(i);
+        }
+    }
+
+    return numbers;
+};
+
+
     return (
         <>
             <div className="superheroes-page">
@@ -53,7 +67,52 @@ export default function Superheroes() {
                 <div className="cards-container">
                     <Outlet context={heroesShow} />
                 </div>
+      <div className="pagination">
 
+    <button 
+    onClick={() => setPage(0)}
+    disabled={page === 0}
+    className="arrow"
+>
+    {"<<"}
+</button>
+
+<button 
+    onClick={prevPage}
+    disabled={page === 0}
+    className="arrow"
+>
+    {"<"}
+</button>
+
+{getPageNumbers().map(num => (
+    <button
+        key={num}
+        onClick={() => setPage(num)}
+        className={num === page ? "active-page" : ""}
+    >
+        {num + 1}
+    </button>
+))}
+
+<button 
+    onClick={nextPage}
+    disabled={(page + 1) * 20 >= heroes.length}
+    className="arrow"
+>
+    {">"}
+</button>
+
+<button 
+   onClick={() => setPage(Math.ceil(heroes.length / 20) - 1)}
+        disabled={(page + 1) * 20 >= heroes.length}
+    className="arrow"
+>
+    {">>"}
+</button>
+
+
+</div>
                 <div className="pagination">
                     <button onClick={prevPage}>←</button>
                     <button onClick={nextPage}>→</button>
