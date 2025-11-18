@@ -16,8 +16,8 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Principal />}>
-          <Route path='/inicio' element={<Inicio />}></Route>
-          <Route path='/superheroes' element={<Superheroes />}>
+          <Route path='inicio' element={<Inicio />}></Route>
+          <Route path='superheroes' element={<Superheroes />}>
             <Route path='all' element={<Cards />} ></Route>
             <Route path=':id' element={<SuperHeroeIndividual />}></Route>
             <Route path='busqueda' element={<Busqueda />} ></Route>

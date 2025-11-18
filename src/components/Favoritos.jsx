@@ -16,7 +16,6 @@ export default function Favoritos() {
                 .then(res => res.json())
                 .then(data => {
                     setHeroesFav(prev => {
-                        // evitar duplicados:
                         if (prev.some(h => h.id === data.id)) return prev;
                         return [...prev, data];
                     });

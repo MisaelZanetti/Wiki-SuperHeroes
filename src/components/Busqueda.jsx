@@ -25,7 +25,6 @@ export default function Busqueda() {
                 <input className="inputBusqueda"
                     type="text"
                     placeholder="Buscar superhéroe..."
-                    value={valor}
                     onInput={manejarCambio}
                 />
             </div>

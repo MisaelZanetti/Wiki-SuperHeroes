@@ -19,9 +19,9 @@ export default function Superheroes() {
     }, []);
 
     useEffect(() => {
-        const start = page * 20;
-        const end = start + 20;
-        setHeroesShow(heroes.slice(start, end));
+        const inicio = page * 20;
+        const fin = inicio + 20;
+        setHeroesShow(heroes.slice(inicio, fin));
     }, [heroes, page]);
 
     const nextPage = () => {
@@ -37,17 +37,17 @@ export default function Superheroes() {
     };
 
     const getPageNumbers = () => {
-    const totalPages = Math.ceil(heroes.length / 20);
-    const numbers = [];
+        const totalPages = Math.ceil(heroes.length / 20);
+        const numbers = [];
 
-    for (let i = page - 2; i <= page + 2; i++) {
-        if (i >= 0 && i < totalPages) {
-            numbers.push(i);
+        for (let i = page - 2; i <= page + 2; i++) {
+            if (i >= 0 && i < totalPages) {
+                numbers.push(i);
+            }
         }
-    }
 
-    return numbers;
-};
+        return numbers;
+    };
 
 
     return (
@@ -67,52 +67,52 @@ export default function Superheroes() {
                 <div className="cards-container">
                     <Outlet context={heroesShow} />
                 </div>
-      <div className="pagination">
+                <div className="pagination">
 
-    <button 
-    onClick={() => setPage(0)}
-    disabled={page === 0}
-    className="arrow"
->
-    {"<<"}
-</button>
+                    <button
+                        onClick={() => setPage(0)}
+                        disabled={page === 0}
+                        className="arrow"
+                    >
+                        {"<<"}
+                    </button>
 
-<button 
-    onClick={prevPage}
-    disabled={page === 0}
-    className="arrow"
->
-    {"<"}
-</button>
+                    <button
+                        onClick={prevPage}
+                        disabled={page === 0}
+                        className="arrow"
+                    >
+                        {"<"}
+                    </button>
 
-{getPageNumbers().map(num => (
-    <button
-        key={num}
-        onClick={() => setPage(num)}
-        className={num === page ? "active-page" : ""}
-    >
-        {num + 1}
-    </button>
-))}
+                    {getPageNumbers().map(num => (
+                        <button
+                            key={num}
+                            onClick={() => setPage(num)}
+                            className={num === page ? "active-page" : ""}
+                        >
+                            {num + 1}
+                        </button>
+                    ))}
 
-<button 
-    onClick={nextPage}
-    disabled={(page + 1) * 20 >= heroes.length}
-    className="arrow"
->
-    {">"}
-</button>
+                    <button
+                        onClick={nextPage}
+                        disabled={(page + 1) * 20 >= heroes.length}
+                        className="arrow"
+                    >
+                        {">"}
+                    </button>
 
-<button 
-   onClick={() => setPage(Math.ceil(heroes.length / 20) - 1)}
-        disabled={(page + 1) * 20 >= heroes.length}
-    className="arrow"
->
-    {">>"}
-</button>
+                    <button
+                        onClick={() => setPage(Math.ceil(heroes.length / 20) - 1)}
+                        disabled={(page + 1) * 20 >= heroes.length}
+                        className="arrow"
+                    >
+                        {">>"}
+                    </button>
 
 
-</div>
+                </div>
                 <div className="pagination">
                     <button onClick={prevPage}>←</button>
                     <button onClick={nextPage}>→</button>

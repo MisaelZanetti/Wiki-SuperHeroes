@@ -6,13 +6,11 @@ function App() {
 
       <h1 className="app-title">WikiHeroes al cubo</h1>
 
-      {/* ------------------ BANNER NUEVO ------------------ */}
       <div className="app-banner">
         <p>
           ⚡ Explora más de <strong>700 superhéroes</strong>, descubre sus poderes y guardá tus favoritos.
         </p>
       </div>
-      {/* -------------------------------------------------- */}
 
       <section className="app-section">
         <h2>Acerca de esta Wiki</h2>
