@@ -72,6 +72,135 @@
   transform: translateY(-3px);
 }
 
+/* ===== FILTROS ===== */
+.filters-container {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo en el borde superior */
+.filters-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
+  opacity: 0.5;
+  filter: blur(1px);
+}
+
+.filters-header {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filters-header h3 {
+  color: var(--accent-2);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(0, 212, 166, 0.3);
+}
+
+.filters-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-soft);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de hover con overlay */
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 77, 139, 0.1), rgba(0, 212, 166, 0.05));
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.filter-btn:hover::before {
+  opacity: 1;
+}
+
+.filter-btn:hover {
+  border-color: rgba(255, 77, 139, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 77, 139, 0.15);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 28px rgba(255, 77, 139, 0.35),
+              0 0 20px rgba(0, 212, 166, 0.2);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(255, 77, 139, 0.45),
+              0 0 30px rgba(0, 212, 166, 0.3);
+}
+
+/* Animación de pulso sutil en el botón activo */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 8px 28px rgba(255, 77, 139, 0.35),
+                0 0 20px rgba(0, 212, 166, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(255, 77, 139, 0.45),
+                0 0 30px rgba(0, 212, 166, 0.3);
+  }
+}
+
+.filter-btn.active {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Responsive para filtros */
+@media (max-width: 768px) {
+  .filters-container {
+    padding: 18px;
+  }
+  
+  .filters-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .filter-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
 /* ===== CARDS GRID ===== */
 .cards-container {
   display: grid;
@@ -203,12 +332,6 @@
     background: #ff0044 !important;
     border-color: #ff0044 !important;
     font-weight: bold;
-}
-.pagination {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin: 20px 0;
 }
 
 /* TODOS LOS BOTONES */
